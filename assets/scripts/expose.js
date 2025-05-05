@@ -10,7 +10,7 @@ selectHorn.addEventListener("change", changeImg);
 const controlVolume = document.getElementById('volume');
 controlVolume.addEventListener("input", changeVolume);
 
-const soundButton = document.querySelector('button');
+const soundButton = document.getElementsByTagName('button')[0];
 soundButton.addEventListener("click", playSound);
 
 }
@@ -41,7 +41,7 @@ function changeVolume(){
 const controlVolume = document.getElementById('volume');
 
 //change volume
-const audio = document.querySelector("audio");
+const audio = document.getElementsByTagName('audio')[0];
 audio.volume = controlVolume.value/100;
 
 // change icon
@@ -69,7 +69,7 @@ switch(true){
 
 function playSound(){
   const selectHorn = document.getElementById('horn-select');
-  const audio = document.querySelector('audio');
+  const audio = document.getElementsByTagName('audio')[0];
   const jsConfetti = new JSConfetti()
 
   switch(true){
@@ -83,8 +83,6 @@ function playSound(){
       audio.src = "assets/audio/party-horn.mp3";
       jsConfetti.addConfetti({
         emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
-        confettiRadius: 600,
-        confettiNumber: 500,
      })
       break;
   }
